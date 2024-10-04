@@ -21,9 +21,24 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 	href="mailto:sultansakyp77@gmail.com">sultansakyp77@gmail.com</a>.</p>`)
 }
 
+func pathHandler(w http.ResponseWriter, r *http.Request) {
+	switch r.URL.Path {
+	case "/":
+		homeHandler(w, r)
+	case "/contact":
+		contactHandler(w, r)
+	default:
+		http.Error(w, "Page not found", http.StatusNotFound)
+		//http.StatusText(http.StatusNotFound)
+		// w.WriteHeader(404)
+		// fmt.Fprint(w, "Page not found")
+	}
+}
+
 func main() {
-	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/contact", contactHandler)
+	http.HandleFunc("/", pathHandler)
+	// http.HandleFunc("/", homeHandler)
+	// http.HandleFunc("/contact", contactHandler)
 	fmt.Println("Starting the server on :3000... ")
 	http.ListenAndServe(":3000", nil)
 
