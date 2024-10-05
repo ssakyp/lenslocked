@@ -27,19 +27,19 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 	FAQ Page
 	</h1>
 	<p>
-	Q: Is there a free version?
+	<b> Q: Is there a free version? </b>
 	<br />
 	A: Yes! We offer a free trial for 30 days on any paid plans.
 	</p>
 	<p>
-	Q: What are your support hours?
+	<b> Q: What are your support hours? </b>
 	<br />
 	A: We have support staff answering emails 24/7, though response times may be a bit slower on weekends.
 	</p>
 	<p>
-	Q: How do I contact support?
+	<b> Q: How do I contact support? </b>
 	<br />
-	A: Email us - <ahref="mailto:sultansakyp77@gmail.com">sultansakyp77@gmail.com</a>
+	A: Email us - <a href="mailto:sultansakyp77@gmail.com">sultansakyp77@gmail.com</a>
 	</p>
 	
 	`)
