@@ -12,8 +12,9 @@ import (
 )
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
+	bio := `<script>alert("Haha, you have been h4x0rt3d!");</script>`
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-	fmt.Fprintf(w, "<h1>Welcome to my awesome site!<h1>")
+	fmt.Fprintf(w, "<h1>Welcome to my awesome site!<h1><p>Bio:"+bio+"</p>")
 
 }
 
