@@ -5,7 +5,30 @@
 const user = {
 "name": {{.Name}},
 "bio": {{.Bio}},
-"age": {{.Age}}
+"age": {{.Age}},
+"date": {{.Date}},
+"address": {{.Address}},
+"family": {{.Family}},
+"dad": {{.Dad}},
 };
 console.log(user);
 </script>
+
+
+{{range $member := .Family}}
+    <div class="col-12">
+    {{if eq $member $.Dad}}
+        <textarea> Dad is here </textarea>
+    {{ else }}
+        <textarea> Dad is not here </textarea>
+    {{end}}
+    </div>
+{{end}}
+
+{{range $index, $famMember := .Family}}
+    <div class="col-12">
+        <textarea> {{$famMember}} </textarea>
+        <textarea> {{index $.Date $index}} </textarea>
+    </div>
+{{end}}
+
